@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validator</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Signup Today!</h1>
+      <!-- Form -->
+      <form action="" id="form" novalidate>
+        <!-- Full Name -->
+        <div class="form_group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required
+            minlength="6"
+            maxlength="20"
+          />
+        </div>
+        <!-- Phone Number -->
+        <div class="form_group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="text"
+            id="phone"
+            placeholder="444-444-4444"
+            required
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          />
+        </div>
+        <!-- Email -->
+        <div class="form_group">
+          <label for="email">email </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="email@address.com"
+            required
+          />
+        </div>
+        <!-- Website -->
+        <div class="form_group">
+          <label for="websiteUrl">Website </label>
+          <input
+            type="url"
+            id="websiteUrl"
+            placeholder="https://website.com"
+            required
+          />
+        </div>
+        <!-- Password -->
+        <div class="form_group">
+          <label for="password1">Password </label>
+          <input
+            type="password"
+            id="password1"
+            placeholder="Create Password Minimum Length 8"
+            required
+            minlength="6"
+            maxlength="20"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            title="Password should include 1 uppercase 1 lowercase and 1 number"
+          />
+        </div>
+        <!-- Confirmed Password -->
+        <div class="form_group">
+          <label for="password2">Confirm Password </label>
+          <input
+            type="password"
+            id="password2"
+            placeholder="Confirm Password"
+            required
+            minlength="6"
+            maxlength="20"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <!-- Error or success msg -->
+      <div class="msg_container">
+        <h3 id="msg">Don't Hesitate!</h3>
+      </div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
